@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Creative</title>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/creative.css" />
+    <style>
+        form {
+            background-color: #f5f5f5;
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #creative {
+            width: 300px;
+            height: 250px;
+            margin: 20px auto
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="creative"></div>
+
+    <form id="settingForm">
+
+        <p>
+            <label>
+                <input type="checkbox" name="openNewTab" checked /> Mở link trong tab mới
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input type="checkbox" name="displayVideoText" /> Hiển thị phần text mô tả
+            </label>
+        </p>
+
+        <p>
+            <label>
+                <input type="checkbox" name="redirectButton" disabled /> Hiển thị Nút điều hướng
+            </label>
+        </p>
+
+        <p>
+            <label>Nội dung của Nút điều hướng</label><br />
+            <input type="text" name="redirectButtonText" value="😀" disabled />
+        </p>
+
+        <p>
+            <label>Số lần phát lại video</label><br />
+            <input type="number" name="limitNumberRepeat" min="-1" value="-1" /> <br />
+            <small style="color: #666;">-1: lặp vô hạn, 0 là không lặp</small>
+        </p>
+
+        <p>
+            <label>Thời gian chờ phát lại</label><br />
+            <input type="number" name="delayRepeat" min="0" value="3000" step="500" /> <br />
+            <small style="color: #666;">đơn vị tính miliseconds (3000ms = 3s)</small>
+        </p>
+
+        <button type="submit">Cập nhật thay đổi</button>
+        <button type="button" name="btnTest">Tắt quảng cáo</button>
+
+    </form>
+
+    <script src="js/hls.min.js"></script>
+    <script src="js/creative.js?v=1.0.4"></script>
+
+    <script>
+
+        (function () {
+
+            var settingForm = document.getElementById('settingForm');
+
+            var settings = {
+
+                // id của thẻ div sẽ render quảng cáo
+                targetId: "creative",
+
+                // lựa chọn có hiển thị text phía dưới video 
+                // mặc định: true
+                displayVideoText: false,
+
+                // hiển thị button điều hướng
+                // chỉ phù hợp khi displayVideoText = true
+                // mặc định: true
+                redirectButton: true,
+
+                // nội dung của button 
+                // mặc định: Go!
+                redirectButtonText: "",
+
+                // true: mở link trong tab mới, 
+                // false: mở tab hiện tại
+                // mặc định: true
+                openNewTab: true,
+
+                // số lần phát lại video
+                // mặc định: -1
+                limitNumberRepeat: -1,
+
+                // thời gian chờ trước khi phát lại (đơn vị miliseconds)
+                // mặc định: 3 giây (3000ms)
+                delayRepeat: 3000,
+
+                // thuộc tính của video
+                video: {
+                    source: "https://playertest.longtailvideo.com/adaptive/customIV/prog_index.m3u8",
+                    thumbnail: "http://report.bidgear-syndication.com/test/thuan/img/thumb2.jpg",
+                    text: "There are many variations of passages",
+                    link: "https://laravel.com/",
+                },
+            };
+
+            var creative = new Creative(settings);
+            creative.debug = true;
+
+            creative.on(Creative.Events.VIDEO_START_FIRST_TIME, function(data){
+                console.log("Creative.Events.VIDEO_START_FIRST_TIME", data);
+            });
+
+            creative.on(Creative.Events.VIDEO_ENDED_FIRST_TIME, function(data){
+                console.log("Creative.Events.VIDEO_ENDED_FIRST_TIME", data);
+            });
+
+            creative.on(Creative.Events.DESTROY, function(data){
+                console.log("Creative.Events.DESTROY", data);
+            });
+
+            creative.display();
+
+            settingForm.onsubmit = function (event) {
+                event.preventDefault();
+
+                loadFormData(this);
+
+                creative.loadConfig(settings);
+
+                creative.display();
+            }
+
+            settingForm.displayVideoText.addEventListener("change", function () {
+                if (!this.checked) {
+                    settingForm.redirectButton.setAttribute("disabled", "disabled");
+                    settingForm.redirectButtonText.setAttribute("disabled", "disabled");
+                } else {
+                    settingForm.redirectButton.removeAttribute("disabled");
+
+                    if (settingForm.redirectButton.checked) {
+                        settingForm.redirectButtonText.removeAttribute("disabled");
+                    }
+                }
+            });
+
+            settingForm.redirectButton.addEventListener("change", function () {
+                if (!this.checked) {
+                    settingForm.redirectButtonText.setAttribute("disabled", "disabled");
+                } else {
+                    settingForm.redirectButtonText.removeAttribute("disabled");
+                }
+            });
+
+            settingForm.btnTest.addEventListener("click", function () {
+                creative.destroy();
+            })
+
+            function loadFormData(form) {
+                settings.displayVideoText = form.displayVideoText.checked;
+                settings.redirectButton = form.redirectButton.checked;
+                settings.redirectButtonText = form.redirectButtonText.value;
+                settings.openNewTab = form.openNewTab.checked;
+                settings.limitNumberRepeat = parseInt(form.limitNumberRepeat.value, 10);
+                settings.delayRepeat = parseInt(form.delayRepeat.value, 10);
+            }
+            
+        })();
+
+    </script>
+
+</body>
+
+</html>

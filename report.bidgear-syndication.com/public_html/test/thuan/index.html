@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+    <title>Video Creative</title>
+    
+    <style>
+        *{padding: 0; margin: 0; box-sizing: border-box;}
+        .root{display: flex; justify-content: space-around; flex-wrap: wrap; margin: 30px auto;}
+        .root >div{margin-bottom: 30px;}
+    </style>
+
+    <link href="css/video-creative.css?v=3" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div class="root">
+        <div id="jd3t2"></div>
+        <div id="qh36r"></div>
+        <div id="x7w2w"></div>
+        <div id="7r3xt"></div>
+    </div>
+
+    <script src="js/hls.js"></script>
+    <script src="js/video-creative.js?v=3"></script>
+
+    <script>
+
+        // instance 01 - light - with button
+        new VideoCreative(document, {
+
+            // thông tin của quảng cáo
+            creative: {
+
+                // source file m3u8. Thuộc tính bắt buộc
+                m3u8_source: "https://m2-dsp.bidgear.com/video-hls?server_id=2&video_id=25&vt=1607487192&token=746869736973766964656f323531363037343837313932d41d8cd98f00b204e9800998ecf8427e",
+                
+                // ảnh poster của video
+                thumbnail: "img/thumb4.jpg",
+
+                // Nội dung text mô tả. Thuộc tính bắt buộc
+                title: "Có thuyết nói Nguyễn Du viết Truyện Kiều sau khi đi sứ Trung Quốc (1814–1820)",
+
+                // Link điều hướng khi click vào video hoặc text
+                link: "http://bidgear.com",
+            },
+
+            // theme sử dụng - hiện tại có 02 kiểu là light và dark. Mặc định là light
+            theme: "light",
+
+            // id của thẻ div sẽ được render quảng cáo
+            target_id: 'jd3t2',
+
+            // tiền tố của class css. Mặc định là bg_
+            css_class_prefix: "dsp_",
+
+            // giá trị xác định hiển thị button mở rộng. Mặc định là TRUE            
+            add_button: true,
+
+            // text của button mở rộng. Mặc định là Go!
+            button_text: "Xem!",
+        });
+
+        // instance 02 - light - without button
+        new VideoCreative(document, {
+            creative: {
+                m3u8_source: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+                thumbnail: "img/thumb.jpg",
+                title: "Lại có thuyết nói ông viết trước khi đi sứ, có thể vào khoảng cuối thời Lê đầu thời Tây Sơn",
+                link: "http://bidgear.com",
+            },
+            theme: "light",
+            target_id: 'qh36r',
+            css_class_prefix: "dsp_",
+            add_button: false,
+        });
+
+        // instance 03 - dark - with button
+        new VideoCreative(document, {
+            creative: {
+                m3u8_source: "https://test-streams.mux.dev/dai-discontinuity-deltatre/manifest.m3u8",
+                thumbnail: "img/thumb3.jpg",
+                title: "Thuyết sau được nhiều người chấp nhận hơn",
+                link: "http://bidgear.com",
+            },
+            theme: "dark",
+            target_id: 'x7w2w',
+            css_class_prefix: "dsp_",
+            add_button: true,
+            button_text: "Đọc",
+        });
+
+        // instance 04 - dark - without button
+        new VideoCreative(document, {
+            creative: {
+                m3u8_source: "https://playertest.longtailvideo.com/adaptive/vod-with-mp3/manifest.m3u8",
+                thumbnail: "img/thumb2.jpg",
+                title: "Đoạn trường tân thanh",
+                link: "http://bidgear.com",
+            },
+            theme: "dark",
+            target_id: '7r3xt',
+            css_class_prefix: "dsp_",
+            add_button: false,
+        });
+    </script>
+</body>
+
+</html>

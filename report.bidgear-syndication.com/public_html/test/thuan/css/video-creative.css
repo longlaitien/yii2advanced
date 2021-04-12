@@ -1,0 +1,249 @@
+.dsp_container .dsp_content .dsp_title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.dsp_container {
+  padding: 0;
+  margin: 0 auto;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /** -------------------- content -------------------- */
+}
+
+.dsp_container a {
+  text-decoration: none;
+}
+
+.dsp_container .dsp_player {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  cursor: pointer;
+  /** -------------------- mask blur -------------------- */
+  /** -------------------- progress timeline -------------------- */
+}
+
+.dsp_container .dsp_player video {
+  height: 210px;
+  width: 300px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.dsp_container .dsp_player .dsp_mask {
+  background-color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 110%;
+  height: 110%;
+  margin-left: -5%;
+  margin-top: -5%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dsp_container .dsp_player .dsp_mask.dsp_blur {
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
+.dsp_container .dsp_player .dsp_icon_volume {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.dsp_container .dsp_player .dsp_progress {
+  background-color: #ccc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.dsp_container .dsp_player .dsp_progress .dsp_progress_bar {
+  background-color: #FF5722;
+  height: 3px;
+  width: 0%;
+}
+
+.dsp_container .dsp_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-image: -webkit-gradient(linear, left top, right top, from(#314755), color-stop(51%, #26a0da), to(#314755));
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  background-size: 200% auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  height: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.dsp_container .dsp_content .dsp_title {
+  -webkit-line-clamp: 2;
+  color: #fff;
+  padding: 0 5px;
+  font-size: 14px;
+  line-height: 1.3;
+  width: 300px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dsp_container .dsp_content .dsp_title.dsp_title_flex {
+  width: 220px;
+}
+
+.dsp_container .dsp_content .dsp_button_primary {
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.2em;
+  font-weight: 500;
+  background-image: -webkit-gradient(linear, left top, right top, from(#144648), color-stop(51%, #0f5248), to(#042a2b));
+  background-image: linear-gradient(to right, #144648 0%, #0f5248 51%, #042a2b 100%);
+  background-size: 200% auto;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: #fff;
+  width: 80px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+.dsp_container .dsp_content:hover {
+  background-position: right center;
+}
+
+.dsp_container .dsp_content:hover .dsp_button_primary {
+  background-position: right center;
+}
+
+/** -------------------- icon -------------------- */
+.dsp_icon {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.dsp_icon:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  display: block;
+  -webkit-transform: scale(0.001, 0.001);
+          transform: scale(0.001, 0.001);
+}
+
+.dsp_icon:focus, .dsp_icon:active {
+  outline: none;
+}
+
+.dsp_icon:focus:before, .dsp_icon:active:before {
+  -webkit-animation: dspbubble_effect 800ms ease-out;
+          animation: dspbubble_effect 800ms ease-out;
+}
+
+.dsp_icon svg {
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+}
+
+/** -------------------- theme setting -------------------- */
+.dsp_container.dsp_dark_theme .dsp_icon svg {
+  fill: #fff;
+}
+
+.dsp_container.dsp_dark_theme .dsp_player .dsp_progress .dsp_progress_bar {
+  background-color: #FF5722;
+}
+
+.dsp_container.dsp_dark_theme .dsp_content {
+  background-image: -webkit-gradient(linear, left top, right top, from(#314755), color-stop(51%, #26a0da), to(#314755));
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+}
+
+.dsp_container.dsp_dark_theme .dsp_content .dsp_button_primary {
+  background-image: -webkit-gradient(linear, left top, right top, from(#232526), color-stop(51%, #414345), to(#232526));
+  background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%);
+  color: yellow;
+}
+
+.dsp_container.dsp_light_theme .dsp_icon svg {
+  fill: #fff;
+}
+
+.dsp_container.dsp_light_theme .dsp_content {
+  background-image: -webkit-gradient(linear, left top, right top, from(#314755), color-stop(51%, #26a0da), to(#314755));
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+}
+
+.dsp_container.dsp_light_theme .dsp_content .dsp_button_primary {
+  background-image: -webkit-gradient(linear, left top, right top, from(#144648), color-stop(51%, #0f5248), to(#042a2b));
+  background-image: linear-gradient(to right, #144648 0%, #0f5248 51%, #042a2b 100%);
+}
+
+@-webkit-keyframes dspbubble_effect {
+  50% {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
+
+@keyframes dspbubble_effect {
+  50% {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}

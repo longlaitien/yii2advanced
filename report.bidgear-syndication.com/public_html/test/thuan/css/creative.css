@@ -1,0 +1,215 @@
+:root {
+  --primary-color: #fff;
+}
+
+.dsp-container .dsp-text-content .dsp-text-link {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dsp-hidden {
+  display: none !important;
+}
+
+.dsp-container {
+  width: 300px;
+  height: 250px;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dsp-container * {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dsp-container a {
+  text-decoration: none;
+}
+
+.dsp-container .dsp-content {
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.dsp-container .dsp-content .dsp-backdrop {
+  width: 110%;
+  height: 110%;
+  position: absolute;
+  left: -5%;
+  top: -5%;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+.dsp-container .dsp-content video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.dsp-container .dsp-content .dsp-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: #c5c5c5;
+}
+
+.dsp-container .dsp-content .dsp-progress .dsp-progress-bar {
+  background-color: #ffc107;
+  width: 0%;
+  height: 100%;
+  -webkit-transition: width 0.4s ease-in;
+  transition: width 0.4s ease-in;
+}
+
+.dsp-container .dsp-content .dsp-icon-volume {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  outline: none;
+}
+
+.dsp-container .dsp-content .dsp-icon-volume::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  outline: none;
+  -webkit-transform: scale(0.001, 0.001);
+          transform: scale(0.001, 0.001);
+}
+
+.dsp-container .dsp-content .dsp-icon-volume.dsp-active::after {
+  -webkit-animation: dsp-effect_bubbles 0.8s ease-out;
+          animation: dsp-effect_bubbles 0.8s ease-out;
+}
+
+.dsp-container .dsp-content .dsp-icon-volume svg {
+  pointer-events: none;
+  fill: #fff;
+}
+
+.dsp-container .dsp-text-content {
+  width: 300px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, right top, from(#314755), color-stop(51%, #26a0da), to(#314755));
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  background-size: 200% auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dsp-container .dsp-text-content:hover {
+  background-position: right center;
+}
+
+.dsp-container .dsp-text-content .dsp-text-link {
+  -webkit-line-clamp: 2;
+  width: calc(300px - 80px);
+  padding: 3px 5px;
+  line-height: 1.4;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.dsp-container .dsp-text-content .dsp-text-link.dsp-text-link-full {
+  width: 300px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dsp-container .dsp-text-content .dsp-btn-redirect {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
+  color: yellow;
+  background-image: -webkit-gradient(linear, left top, right top, from(#232526), color-stop(51%, #414345), to(#232526));
+  background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%);
+  background-size: 200% auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.dsp-container .dsp-text-content .dsp-btn-redirect:hover {
+  background-position: right center;
+}
+
+@-webkit-keyframes dsp-effect_bubbles {
+  50% {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}
+
+@keyframes dsp-effect_bubbles {
+  50% {
+    -webkit-transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+  99% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.001, 0.001);
+            transform: scale(0.001, 0.001);
+    opacity: 1;
+  }
+}

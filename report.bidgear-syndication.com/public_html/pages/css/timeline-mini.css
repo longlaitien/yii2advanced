@@ -1,0 +1,211 @@
+/***
+New Timeline
+***/
+/*--------------------------------------------------
+    [TRANSITION]
+----------------------------------------------------*/
+/* Cubic Bezier Transition */
+.timeline.mini {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline.mini:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 4px;
+    background: #FFFFFF;
+    top: 0px;
+    bottom: 0px;
+    margin-left: 18px;
+}
+
+.timeline.mini .timeline-item {
+    margin: 0;
+    padding: 0;
+}
+
+.timeline.mini .timeline-badge {
+    float: left;
+    position: relative;
+    padding-right: 30px;
+    height: 40px;
+    width: 40px;
+}
+
+.timeline.mini .timeline-badge-userpic {
+    width: 40px;
+    border: 4px #FFFFFF solid;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+}
+
+.timeline.mini .timeline-badge-userpic img {
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+    vertical-align: middle !important;
+}
+
+.timeline.mini .timeline-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    border-radius: 50% !important;
+    padding-top: 30px;
+    padding-left: 22px;
+}
+
+.timeline.mini .timeline-icon i {
+    font-size: 25px;
+    top: -18px;
+    position: relative;
+    left: -7px;
+}
+
+.timeline.mini .timeline-body {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 70px;
+    background-color: #FFFFFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+.timeline.mini .timeline-body:before,
+.timeline.mini .timeline-body:after {
+    content: " ";
+    display: table;
+}
+.timeline.mini .timeline-body:after {
+    clear: both;
+}
+
+.timeline.mini .timeline-body-arrow {
+    position: absolute;
+    top: 10px;
+    left: -14px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 14px 14px 0;
+    border-color: transparent #FFFFFF transparent transparent;
+}
+
+.timeline.mini .timeline-body-head {
+    margin-bottom: 10px;
+}
+
+.timeline.mini .timeline-body-head-caption {
+    float: left;
+}
+
+.timeline.mini .timeline-body-title {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.timeline.mini .timeline-body-alerttitle {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.timeline.mini .timeline-body-time {
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.timeline.mini .timeline-body-head-actions {
+    float: right;
+}
+
+.timeline.mini .timeline-body-head-actions .btn-group {
+    margin-top: -2px;
+}
+
+.timeline.mini .timeline-body-content {
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+.timeline.mini .timeline-body-img {
+    width: 100px;
+    height: 100px;
+    margin: 5px 20px 0 0px;
+}
+
+.timeline.mini .page-container-bg-solid .timeline:before {
+    background: #fff;
+}
+
+.timeline.mini .page-container-bg-solid .timeline-badge-userpic {
+    border-color: #fff;
+}
+
+.timeline.mini .page-container-bg-solid .timeline-icon {
+    background-color: #fff;
+}
+
+.timeline.mini .page-container-bg-solid .timeline-body {
+    background-color: #fff;
+}
+
+.timeline.mini .page-container-bg-solid .timeline-body-arrow {
+    border-color: transparent #fff transparent transparent;
+}
+
+@media (max-width: 768px) {
+    .timeline.mini .timeline-body-head-caption {
+        width: 100%;
+    }
+
+    .timeline.mini .timeline-body-head-actions {
+        float: left;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .timeline.mini .timeline.mini:before {
+        margin-left: 28px;
+    }
+
+    .timeline.mini .timeline-badge {
+        padding-right: 40px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .timeline.mini .timeline-badge-userpic {
+        width: 60px;
+    }
+
+    .timeline.mini .timeline-icon {
+        width: 60px;
+        height: 60px;
+        padding-top: 23px;
+        padding-left: 18px;
+    }
+
+    .timeline.mini .timeline-icon i {
+        font-size: 25px;
+    }
+
+    .timeline.mini .timeline-body {
+        margin-left: 80px;
+    }
+
+    .timeline.mini .timeline-body-arrow {
+        top: 17px;
+    }
+}

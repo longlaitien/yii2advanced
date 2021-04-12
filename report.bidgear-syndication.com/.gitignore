@@ -1,0 +1,5 @@
+/.idea
+/vendor
+/backend/runtime/tmp/*
+/common/runtime/*
+/public_html/assets/*

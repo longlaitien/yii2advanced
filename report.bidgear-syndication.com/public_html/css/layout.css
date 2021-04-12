@@ -1,0 +1,210 @@
+/**
+*TODO custom popover
+*/
+.popover .popover-content {
+    white-space: nowrap !important;
+}
+
+/**
+*TODO style form
+*/
+.form-group.required label.control-label:after {
+    content: "*";
+    margin-left: 5px;
+    color: red;
+}
+
+/**
+*TODO style for data table
+*/
+.table.table-advance thead tr th {
+    background-color: #DDD;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
+
+.table.table-advance thead tr th a {
+    background-color: #DDD;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+}
+
+.table.table-advance thead tr th a.desc:after {
+    padding-left: 5px;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-feature-settings: normal;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    transform: translate(0px, 0px);
+    content: "\f161";
+}
+
+.table.table-advance thead tr th a.asc:after {
+    padding-left: 5px;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-feature-settings: normal;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-synthesis: weight style;
+    font-variant: normal;
+    font-size: inherit;
+    text-rendering: auto;
+    transform: translate(0px, 0px);
+    content: "\f160";
+}
+
+/**
+*TODO custom page-bar layout
+**/
+.page-container-bg-solid .page-bar {
+    position: relative;
+    background-color: #FFF;
+    padding: 0px 15px;
+    margin: -15px 0px 10px 0px;
+}
+
+.color_black {
+    color: #000000 !important;
+}
+
+.font-20 i {
+    font-size: 20px !important;
+}
+
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.quote_total .form-group {
+    margin-bottom: 0px !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.quote_condition .cont-col1 {
+    float: none !important;
+}
+
+.quote_condition .cont-col2 .desc {
+    margin-left: 5px !important;
+}
+
+/*
+* TODO CSS Tag data
+*/
+ul.tags-data {
+    margin-bottom: 5px;
+}
+
+ul.tags-data li i {
+    color: #2B3643;
+}
+
+ul.tags-data a {
+    background: #EEE none repeat scroll 0% 0%;
+    padding: 1px 4px;
+    margin: 0px 4px 4px 0px;
+    display: inline-block;
+    color: #555;
+    text-decoration: none;
+}
+
+ul.tags-data a:hover {
+    background: #ddd none repeat scroll 0 0;
+    text-decoration: none;
+}
+
+.custom-has-error {
+    color: #a94442 !important;
+}
+
+.custom-has-error label, .custom-has-error i, .custom-has-error input, .custom-has-error .tax_code_help_error {
+    color: #a94442 !important;
+}
+
+.custom-has-error input {
+    color: #a94442 !important;
+    border-color: #a94442 !important;
+}
+
+.custom-input-icon {
+    cursor: pointer;
+    right: 20px !important;
+    font-size: 20px !important;
+}
+
+.visibility-hidden div {
+    visibility: hidden;
+}
+
+.label-visibility-hidden{
+    visibility: hidden;
+}
+
+.portlet-title-collapse {
+    cursor: pointer;
+}
+
+.portlet-title-collapse .collapse, .portlet-title-collapse .expand {
+    display: none !important;
+}
+
+.custom_portlet {
+    background-color: #ffffff !important;
+    padding: 10px;
+}
+
+.custom_portlet .feeds li {
+    background-color: white !important;
+}
+
+.color_black {
+    color: #000000 !important;
+}
+
+.font-20 i {
+    font-size: 20px !important;
+}
+
+.margin-right-5 {
+    margin-right: 5px !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.page-content-wrapper {
+    padding-bottom: 40px;
+}
+
+.is_default{
+    background-color: #F1F3FA;
+}
+.text-right{
+    text-align: right!important;
+}

@@ -1,0 +1,222 @@
+.bg_box .bg_screen .bg_suggest a, .bg_box .bg_description .bg_content {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.bg_hidden {
+  display: none !important;
+}
+
+.bg_box {
+  width: 300px;
+  height: 250px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bg_box a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #e5e5e5;
+}
+
+.bg_box a:hover {
+  color: #f5f5f5;
+}
+
+.bg_box .bg_screen {
+  height: calc(250px - 40px);
+  position: relative;
+}
+
+.bg_box .bg_screen .bg_player video {
+  width: 100%;
+  height: calc(250px - 40px);
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+}
+
+.bg_box .bg_screen .bg_mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bg_box .bg_screen .bg_suggest {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.bg_box .bg_screen .bg_suggest a {
+  -webkit-line-clamp: 1;
+  padding: 3px 5px 5px;
+  font-size: 11px;
+  font-weight: 500;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bg_box .bg_screen .bg_controls {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.bg_box .bg_screen .bg_controls .bg_icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.bg_box .bg_screen .bg_controls .bg_icon:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  display: block;
+  -webkit-transform: scale(0.01, 0.01);
+          transform: scale(0.01, 0.01);
+}
+
+.bg_box .bg_screen .bg_controls .bg_icon:focus:before, .bg_box .bg_screen .bg_controls .bg_icon:active:before {
+  -webkit-animation: bg_effect_click 200ms ease-out;
+          animation: bg_effect_click 200ms ease-out;
+}
+
+.bg_box .bg_screen .bg_controls .bg_icon svg {
+  fill: #fff;
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bg_box .bg_screen .bg_duration_time {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #c5c5c5;
+  width: 100%;
+}
+
+.bg_box .bg_screen .bg_duration_time .bg_current_time {
+  width: 0;
+  height: 3px;
+  -webkit-transition: width 100ms ease-out;
+  transition: width 100ms ease-out;
+  background-color: #FFEB3B;
+}
+
+.bg_box .bg_description {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  background-color: #365a6b;
+  background-image: -webkit-gradient(linear, left top, right top, from(#314755), color-stop(51%, #26a0da), to(#314755));
+  background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+  background-size: 200% auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.bg_box .bg_description:hover {
+  background-position: right center;
+}
+
+.bg_box .bg_description .bg_content {
+  -webkit-line-clamp: 2;
+  line-height: 1.2;
+  font-size: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+}
+
+.bg_box .bg_description .bg_button_go {
+  background: -webkit-gradient(linear, left bottom, left top, from(#27343a), to(#4b575d));
+  background: linear-gradient(to top, #27343a, #4b575d);
+  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #FFEB3B;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.bg_box .bg_description .bg_button_go:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#FFC107), to(#FF9800));
+  background: linear-gradient(to top, #FFC107, #FF9800);
+  color: #333;
+}
+
+@-webkit-keyframes bg_effect_click {
+  50% {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+    opacity: 0;
+  }
+  99% {
+    -webkit-transform: scale(0.01, 0.01);
+            transform: scale(0.01, 0.01);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.01, 0.01);
+            transform: scale(0.01, 0.01);
+    opacity: 1;
+  }
+}
+
+@keyframes bg_effect_click {
+  50% {
+    -webkit-transform: scale(2, 2);
+            transform: scale(2, 2);
+    opacity: 0;
+  }
+  99% {
+    -webkit-transform: scale(0.01, 0.01);
+            transform: scale(0.01, 0.01);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(0.01, 0.01);
+            transform: scale(0.01, 0.01);
+    opacity: 1;
+  }
+}

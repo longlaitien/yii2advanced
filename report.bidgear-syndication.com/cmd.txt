@@ -1,0 +1,31 @@
+
+*/30 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r1
+*/16 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r2
+*/65 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r3
+*/19 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r4
+*/59 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r5
+*/31 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r6
+*/29 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r7
+*/16 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/r8
+
+*/61 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/r1
+*/63 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/r2
+*/69 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/r3
+*/14 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/r4
+*/65 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/r5
+*/29 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/r6
+
+#cron for get tag and ads-campaign
+
+*/35 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/remote-tag
+*/36 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii site/remote-ads-campaign
+*/37 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/remote-tag
+*/38 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii mdn-site/remote-ads-campaign
+
+#cron console for RTB get data from GA
+#*/21 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii google-analytics/get-data-real-time
+*/27 * * * * /webserver/php56/bin/php56 /home/bidgear/domains/report.bidgear-syndication.com/yii google-analytics/process-bidder-data-real-time
+
+#mysql
+mysql -ubg_report -pb5FSL719RgAt bg_report -h 127.0.0.1
+mysql -ubg_email -pkhJNFDRKL12 bg_email -h 127.0.0.1

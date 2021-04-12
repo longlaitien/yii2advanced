@@ -1,0 +1,13 @@
+.required label::after{
+    content: ' *';
+    color: red;
+}
+
+.bg-campaign-item {
+    cursor: pointer;
+    background-color: rgb(168, 222, 182);
+}
+
+.cpm_pub::after {
+    content: 'USD' !important;
+}
